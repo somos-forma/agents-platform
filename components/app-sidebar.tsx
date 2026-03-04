@@ -3,6 +3,7 @@
 import * as React from "react";
 import {
   BookOpen,
+  BookOpenText,
   Bot,
   BotIcon,
   Building2,
@@ -13,6 +14,7 @@ import {
   SquareTerminal,
   Users,
 } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 import { NavProjects } from "@/components/nav-projects";
 import { NavSecondary } from "@/components/nav-secondary";
@@ -25,8 +27,10 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarMenuSubButton,
 } from "@/components/ui/sidebar";
 import Image from "next/image";
+import Link from "next/link";
 
 const data = {
   user: {
@@ -183,6 +187,25 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavProjects projects={data.projects} />
       </SidebarContent>
       <SidebarFooter>
+        <SidebarMenu className="mb-5">
+          <SidebarMenuItem>
+            <SidebarMenuSubButton asChild>
+              <Link href="/docs" target="_blank">
+                <BookOpenText />
+                <span className="flex items-center gap-2">
+                  Documentación
+                  <Badge
+                    variant="default"
+                    className="text-[10px] px-1.5 py-0 relative overflow-hidden animate-pulse"
+                  >
+                    <span className="relative z-10">Nuevo</span>
+                    <span className="absolute inset-0 -translate-x-full animate-[shimmer_2s_infinite] bg-gradient-to-r from-transparent via-white/30 to-transparent"></span>
+                  </Badge>
+                </span>
+              </Link>
+            </SidebarMenuSubButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
         <NavUser />
       </SidebarFooter>
     </Sidebar>
