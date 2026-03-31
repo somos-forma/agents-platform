@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 const N8N_HOST = process.env.N8N_HOST || "http://localhost:3000";
 const N8N_API_KEY = process.env.N8N_API_KEY || "";
-const PATH = "workflows?active=true&tags=agents-mvp&excludePinnedData=true";
+const PATH =
+  "workflows?active=true&tags=agents-mvp&excludePinnedData=true&limit=250";
 const OPTIONS = {
   headers: {
     "X-N8N-API-KEY": `${N8N_API_KEY}`,
@@ -18,7 +19,7 @@ export async function GET() {
         {
           message: "Error al obtener workflows de n8n",
         },
-        { status: res.status }
+        { status: res.status },
       );
     }
 
@@ -31,7 +32,7 @@ export async function GET() {
       {
         message: "Error interno del servidor.",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
