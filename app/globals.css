@@ -140,3 +140,28 @@
     transform: translateX(100%);
   }
 }
+
+@keyframes shiny-sweep {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+.shiny-sweep {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 0, 0, 0.08) 50%,
+    transparent
+  );
+  transform: skewX(-15deg);
+  animation: shiny-sweep 2s ease-in-out infinite;
+  pointer-events: none;
+}
