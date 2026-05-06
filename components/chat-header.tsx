@@ -38,7 +38,7 @@ export const ChatHeader = () => {
       <div className="bg-header py-4 flex justify-between items-center max-w-5xl mx-auto p-4 ">
         <div className="flex gap-3 items-center">
           <Image
-            src="/logo-mmg.webp"
+            src="/logo-mmg.png"
             width={40}
             height={40}
             alt="logo de mmg"

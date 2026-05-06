@@ -166,7 +166,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               <a href="#">
                 <div className=" text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
                   <Image
-                    src="/logo-mmg.webp"
+                    src="/logo-mmg.png"
                     width={40}
                     height={40}
                     alt="logo de mmg"
